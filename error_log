@@ -1,0 +1,178 @@
+[06-Aug-2012 16:58:33] PHP Parse error:  syntax error, unexpected T_FUNCTION, expecting ')' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 62
+[06-Aug-2012 16:59:37] PHP Parse error:  syntax error, unexpected T_FUNCTION, expecting ')' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 62
+[06-Aug-2012 17:01:02] PHP Parse error:  syntax error, unexpected T_FUNCTION, expecting ')' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 62
+[06-Aug-2012 17:01:57] PHP Parse error:  syntax error, unexpected T_FUNCTION in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 258
+[06-Aug-2012 17:21:08] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 134
+[06-Aug-2012 17:22:05] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 134
+[06-Aug-2012 17:22:22] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 134
+[06-Aug-2012 17:22:37] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 134
+[06-Aug-2012 17:23:23] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 136
+[06-Aug-2012 17:23:43] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 135
+[06-Aug-2012 14:23:54] PHP Parse error:  syntax error, unexpected T_STRING, expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 139
+[06-Aug-2012 17:24:12] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 135
+[06-Aug-2012 17:24:59] PHP Fatal error:  Cannot use string offset as an array in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 136
+[12-Aug-2012 01:01:55] PHP Warning:  date_timezone_get() expects exactly 1 parameter, 0 given in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 4
+[12-Aug-2012 01:22:58] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 19
+[12-Aug-2012 01:25:46] PHP Parse error:  syntax error, unexpected T_VARIABLE, expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 24
+[12-Aug-2012 01:26:54] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 19
+[12-Aug-2012 01:32:40] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 18
+[12-Aug-2012 01:33:05] PHP Parse error:  syntax error, unexpected '{', expecting '(' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 18
+[12-Aug-2012 01:33:40] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 23
+[12-Aug-2012 01:33:40] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(90): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:34:16] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 23
+[12-Aug-2012 01:34:16] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(90): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:36:40] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 23
+[12-Aug-2012 01:36:40] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(90): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:39:02] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 23
+[12-Aug-2012 01:39:02] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(90): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:40:25] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 23
+[12-Aug-2012 01:40:25] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(93): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:42:40] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 24
+[12-Aug-2012 01:42:40] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(94): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:43:48] PHP Warning:  in_array() [<a href='function.in-array'>function.in-array</a>]: Wrong datatype for second argument in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 24
+[12-Aug-2012 01:43:48] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(94): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:44:51] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(95): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:46:08] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(96): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:47:01] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by ts' at line 1
+
+Query was: select * from jugadores where id_convocatoria= order by ts' in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select * from j...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php(96): BaseDataAccess->executeAndFetch('select * from j...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria/index.php(28): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria/include/data/BaseDataAccess.php on line 104
+[12-Aug-2012 01:55:08] PHP Warning:  Constants may only evaluate to scalar values in /home8/totisoft/public_html/fumbol/convocatoria/include/config.php on line 20
+[12-Aug-2012 01:55:08] PHP Parse error:  syntax error, unexpected '[', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 24
+[12-Aug-2012 02:01:19] PHP Parse error:  syntax error, unexpected '(', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 14
+[12-Aug-2012 02:02:29] PHP Parse error:  syntax error, unexpected '(', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 14
+[12-Aug-2012 02:03:36] PHP Parse error:  syntax error, unexpected '(', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 14
+[12-Aug-2012 02:04:06] PHP Parse error:  syntax error, unexpected '(', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 14
+[12-Aug-2012 02:06:22] PHP Parse error:  syntax error, unexpected '(', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 14
+[12-Aug-2012 02:23:06] PHP Fatal error:  Function name must be a string in /home8/totisoft/public_html/fumbol/convocatoria/index.php on line 30
+[12-Aug-2012 02:56:57] PHP Warning:  Invalid argument supplied for foreach() in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 125
+[12-Aug-2012 15:02:15] PHP Warning:  Invalid argument supplied for foreach() in /home8/totisoft/public_html/fumbol/convocatoria/include/class/convocatoria.php on line 125
+[13-Mar-2013 16:49:12] PHP Fatal error:  Call to undefined method convocatoria::getStatus() in /home8/totisoft/public_html/fumbol/convocatoria_new/index.php on line 46
+[13-Mar-2013 20:48:03] PHP Parse error:  syntax error, unexpected ')', expecting ']' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 44
+[13-Mar-2013 20:49:02] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 43
+[13-Mar-2013 20:49:29] PHP Parse error:  syntax error, unexpected ')', expecting ',' or ';' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 43
+[13-Mar-2013 21:49:28] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by cj.ts' at line 3
+
+Query was: select j.nombre,cj.mensaje,j.id,cj.equipo,j.score from jugadores j
+                inner join convocatoria_jugadores cj on j.id = cj.id_jugador
+                where cj.id_convocatoria= order by cj.ts' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select j.nombre...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php(242): BaseDataAccess->executeAndFetch('select j.nombre...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria_new/index.php(113): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php on line 104
+[13-Mar-2013 21:51:17] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by cj.ts' at line 3
+
+Query was: select j.nombre,cj.mensaje,j.id,cj.equipo,j.score from jugadores j
+                inner join convocatoria_jugadores cj on j.id = cj.id_jugador
+                where cj.id_convocatoria= order by cj.ts' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select j.nombre...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php(242): BaseDataAccess->executeAndFetch('select j.nombre...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria_new/index.php(113): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php on line 104
+[13-Mar-2013 21:55:37] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by cj.ts' at line 3
+
+Query was: select j.nombre,cj.mensaje,j.id,cj.equipo,j.score from jugadores j
+                inner join convocatoria_jugadores cj on j.id = cj.id_jugador
+                where cj.id_convocatoria= order by cj.ts' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select j.nombre...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php(243): BaseDataAccess->executeAndFetch('select j.nombre...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria_new/index.php(113): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php on line 104
+[13-Mar-2013 21:56:15] PHP Fatal error:  Uncaught exception 'Exception' with message '(1064) You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'order by cj.ts' at line 3
+
+Query was: select j.nombre,cj.mensaje,j.id,cj.equipo,j.score from jugadores j
+                inner join convocatoria_jugadores cj on j.id = cj.id_jugador
+                where cj.id_convocatoria= order by cj.ts' in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php:104
+Stack trace:
+#0 /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php(135): BaseDataAccess->execute('select j.nombre...', -1)
+#1 /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php(244): BaseDataAccess->executeAndFetch('select j.nombre...')
+#2 /home8/totisoft/public_html/fumbol/convocatoria_new/index.php(113): convocatoria->getConvocados()
+#3 {main}
+  thrown in /home8/totisoft/public_html/fumbol/convocatoria_new/include/data/BaseDataAccess.php on line 104
+[13-Mar-2013 23:13:02] PHP Fatal error:  Call to undefined function strotime() in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 569
+[13-Mar-2013 23:19:50] PHP Fatal error:  Call to a member function getFecha() on a non-object in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 570
+[13-Mar-2013 23:38:27] PHP Fatal error:  Call to undefined method convocatoria::sede() in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 333
+[13-Mar-2013 23:40:47] PHP Parse error:  syntax error, unexpected T_CONSTANT_ENCAPSED_STRING in /home8/totisoft/public_html/fumbol/convocatoria_new/include/class/convocatoria.php on line 375
