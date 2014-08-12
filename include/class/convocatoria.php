@@ -114,6 +114,8 @@ class convocatoria {
             $q = " update convocatoria set convocados=".$this->convocados.",completo=".($this->completo ? 1 : 0)." where id=".$this->id;
             $db->execute($q);
 
+            $this->asignarCapitan();
+
             if($this->completo) {
                 //$this->generarEquipos();
                 $this->convocatoria_status = self::STATUS_CUPO_COMPLETO;
@@ -122,6 +124,19 @@ class convocatoria {
 
             $this->sendEmail();
         }
+    }
+
+    private function asignarCapitan() {
+
+        $db = DBConnection::getDataAccess();
+
+        //-- Por las dudas, resetear el capitan
+        $q = "update convocatoria_jugadores set capitan=0 where id_convocatoria=".$this->id;
+        $db->execute($q);
+
+        $q = "update convocatoria_jugadores set capitan=1 where id_convocatoria=".$this->id." order by rand() limit 1";
+        $db->execute($q);
+
     }
 
     public function removeJugador($id_jugador,$penalty=false) {
@@ -238,7 +253,7 @@ class convocatoria {
     public function getConvocados($id=0) {
 
         $db = DBConnection::getDataAccess();
-        $q = "select j.nombre,cj.mensaje,j.id,cj.equipo,j.score from jugadores j
+        $q = "select j.nombre,cj.mensaje,j.id,cj.equipo,j.score,cj.capitan from jugadores j
                 inner join convocatoria_jugadores cj on j.id = cj.id_jugador
                 where cj.id_convocatoria=".($id>0 ? $id : $this->id)." order by cj.ts";
         $r = $db->executeAndFetch($q);
@@ -324,26 +339,36 @@ class convocatoria {
         mail(_SELECCION_EMAIL, "Fumbol de ".$dias_semana[date("w",strtotime($this->fecha))], $body, $headers);
     }
 
-    public function getEquiposHTML() {
+    public function getEquiposHTML($showLogo=true) {
 
         $convocados = $this->getConvocados();
 
-	    $body = '<img src="'._APP_URL.'/img/sede_'.$this->getSede().'.jpg" >';
-        $body .= "<h3>Fumbol!! Listado de Convocados para el ".$this->getFecha_string()." en el ".$this->getSede_string()."</h3>";
+        $body='';
+
+	    if($showLogo) {
+            $body = '<img src="'._APP_URL.'/img/'.$this->getLogo().'" >';
+        }
+
+        $body .= "<h3>Listado de Convocados ".($showLogo ? "para el ".$this->getFecha_string()." en el ".$this->getSede_string() : "")."</h3>";
 
         $i= 1;
         $equipos = array();
 
-	    //$body .= "<ul>";
+	    //$body .= "<ul>";\
+        $il_capitano = '';
         foreach($convocados as $c) {
 
-            $body .= "<strong>".$i.".</strong>"." ".$c["nombre"];
+            $body .= "<strong>".$i.". ".$c["nombre"]."</strong>";
             if($c["mensaje"] != '') {
                 $body .= " (<i>".$c["mensaje"]."</i>)";
             }
             $body .= "<br>";
             $i++;
             $equipos[$c["equipo"]][] = $c;
+
+            if($c["capitan"]==1) {
+                $il_capitano = $c["nombre"];
+            }
         }
 
 	    //$body .= "</ul>";
@@ -351,7 +376,7 @@ class convocatoria {
         if($this->completo) {
             $body .= "<h3>Equipos Automaticos</h3>";
 
-            $body .= '<table width="80% border="0" cellspacing="2" cellpadding="2">';
+            $body .= '<table width="50%" border="0" cellspacing="2" cellpadding="2">';
             $body .= '<tr>';
             $body .= '<td align="center">Equipo 1 <br><img src="http://www.fumbol.com.ar/convocatoria/img/remera1.jpg" ></td>';
             $body .= '<td align="center">Equipo 2 <br><img src="http://www.fumbol.com.ar/convocatoria/img/remera2.jpg" ></td>';
@@ -370,11 +395,16 @@ class convocatoria {
 
             $body .= '</table>';
 
+            $body .="<hr/>";
+            $body .= '<h3> El Dios del Fumbol ha seleccionado a <font color="red">'.$il_capitano.'</font> como Capit&aacute;n del encuentro y deber&aacute; apersonarse una ofrenda</h3>';
+
         }
 
         $body .= '<br/><br/>';
         //$body .= '<div class="clearfix" align="center"><label>Para convocarte , ingresa en <a href="'._APP_URL.'">'._APP_URL.'</a></label></div><br/>';
-        $body .= '<h3>Para convocarte , <a href="'._APP_URL.'">hac&eacute; click aca</a></h3><br/>';
+        if($showLogo && !$this->completo) {
+            $body .= '<h3>Para convocarte , <a href="'._APP_URL.'">hac&eacute; click aca</a></h3><br/>';
+        }
 
         return $body;
     }

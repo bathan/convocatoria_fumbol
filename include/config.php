@@ -33,3 +33,8 @@ define("_CONVOCATORIA_PATH",_APP_PATH . "/include/class/convocatoria.php");
 //-- Convocatoria @ Fumbol = Vd@$9o@sBV3t
 
 define("_DIAS_SEMANA", "Domingo,Lunes,Martes,Miercoles,Jueves,Viernes,Sábado");
+
+if(defined('_APP_DEBUG') && _APP_DEBUG) {
+    error_reporting(E_ALL);
+    ini_set('display_errors', '1');
+}

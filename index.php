@@ -90,6 +90,7 @@ $redBackground = ($c->getStatus() == convocatoria::STATUS_HAY_FUMBOL_CERRADA_CON
         }else{
             ?>
                 html {
+                    background: url('<?=_APP_URL."/img/ghana_back.jpg"; ?>');
                     -webkit-background-size: cover;
                     -moz-background-size: cover;
                     -o-background-size: cover;
@@ -99,36 +100,14 @@ $redBackground = ($c->getStatus() == convocatoria::STATUS_HAY_FUMBOL_CERRADA_CON
         }
         ?>
 
-
-        .Cronica
-        {
-
-            position: absolute;
-            left: 50%;
-            top: 50%;
-
-            z-index: 100;
-
-            height: 400px;
-            margin-top: -250px;
-
-            width: 600px;
-            margin-left: -300px;
-
-        }
+        .Cronica{position: absolute;left: 50%;top: 50%;z-index: 100;height: 400px;margin-top: -250px;width: 600px;margin-left: -300px; }
         a:link
-        {
-            color:#FFFFFF;
-        }
-
-        a:visited
-        {
-            color:#FFFFFF;
+        {color:#e9322d;
         }
 
         a:hover
         {
-            color:#FFFFFF;
+            color:#3d773d;
         }
     </style>
 
@@ -152,9 +131,9 @@ $redBackground = ($c->getStatus() == convocatoria::STATUS_HAY_FUMBOL_CERRADA_CON
             if($showForm) {
                 $convocados = $c->getConvocados();
                 ShowConvocatoriaForm($errors,$convocados,$nombre_jugador,$c);
-            }else{
-                ShowEquipos($c);
             }
+            ShowEquipos($c,!$showForm);
+
             break;
         }
         case convocatoria::STATUS_CUPO_COMPLETO: {
@@ -183,7 +162,7 @@ function ShowConvocatoriaForm($errors,$convocados,$nombre_jugador,$c) {
                             <label for="nombre_jugador">Nombre</label>
                             <div class="input">
                                 <input type="text" class="large<?= isset($errors['nombre_jugador']) ? ' error' : '' ?>" id="nombre_jugador" name="nombre_jugador" value="<?=$nombre_jugador?>" />
-                                <?= isset($errors['nombre_jugador']) ? '<span class="help-inline">'.$errors['nombre_jugador'].'</span>' : '<span class="help-inline">Comenzá a tipear y aparecerá tu nombre</span>' ?>
+                                <?= isset($errors['nombre_jugador']) ? '<span class="help-inline">'.$errors['nombre_jugador'].'</span>' : '<span class="help-inline"><strong><font color="#ffffff">Comenzá a tipear y aparecerá tu nombre</font></strong></span>' ?>
                             </div>
 
                         </div>
@@ -211,7 +190,7 @@ function ShowConvocatoriaForm($errors,$convocados,$nombre_jugador,$c) {
     <?
 }
 
-function ShowPlacasRojas($c,$lta=false) {
+function ShowPlacasRojas(convocatoria $c,$lta=false) {
     ?>
         <div class="Cronica">
             <?php
@@ -226,20 +205,21 @@ function ShowPlacasRojas($c,$lta=false) {
 
 function ShowCupoCompleto($fecha_str,$sede_str) {
     ?>
-        <div class="topbar clearfix">
+        <div class="clearfix">
             <div class="topbar-inner">
                 <div class="container">
                     <h3><a href="#">Convocatoria al Fumbol del dia <?php echo $fecha_str; ?> en <?php echo $sede_str;?> COMPLETA!!!</a></h3>
                 </div>
             </div>
         </div>
+
     <?
 }
 
-function ShowEquipos($c){
+function ShowEquipos(convocatoria $c,$showLogo=true){
     ?>
     <div class="clearfix" align="center" style="color:#FFFFFF;">
-        <?php echo $c->getEquiposHTML(); ?>
+        <?php echo $c->getEquiposHTML($showLogo); ?>
     </div>
     <?
 }
