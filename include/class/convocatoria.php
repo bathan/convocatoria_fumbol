@@ -114,9 +114,10 @@ class convocatoria {
             $q = " update convocatoria set convocados=".$this->convocados.",completo=".($this->completo ? 1 : 0)." where id=".$this->id;
             $db->execute($q);
 
-            $this->asignarCapitan();
 
             if($this->completo) {
+                $this->asignarCapitan();
+
                 //$this->generarEquipos();
                 $this->convocatoria_status = self::STATUS_CUPO_COMPLETO;
                 $this->generarEquiposInteligente();
@@ -126,7 +127,7 @@ class convocatoria {
         }
     }
 
-    private function asignarCapitan() {
+    public function asignarCapitan() {
 
         $db = DBConnection::getDataAccess();
 
@@ -134,8 +135,28 @@ class convocatoria {
         $q = "update convocatoria_jugadores set capitan=0 where id_convocatoria=".$this->id;
         $db->execute($q);
 
-        $q = "update convocatoria_jugadores set capitan=1 where id_convocatoria=".$this->id." order by rand() limit 1";
+        //-- Traigo todos los jugadores de esta convocatoria
+        $convocados = $this->getConvocados($this->id);
+        $posibles_capitanes = [];
+
+        foreach($convocados as $fumbolista) {
+            if($fumbolista["capitan_flag"]==0) {
+                $posibles_capitanes[]=$fumbolista["id"];
+            }
+        }
+        shuffle($posibles_capitanes);
+        $capitan_id = reset($posibles_capitanes);
+
+        $q = "update convocatoria_jugadores set capitan=1 where id_convocatoria=".$this->id." and id_jugador=".$capitan_id;
         $db->execute($q);
+
+        //-- Ahora actualizamos la flag para el capitan actual y todos los que ya fueron capitanes alguna vez
+        $q = "update jugadores set capitan_flag=".(_MAX_FECHAS_CAPITANES * -1)." where id=".$capitan_id;
+        $db->execute($q);
+
+        $q = "update jugadores set capitan_flag = capitan_flag + 1 where capitan_flag < 0 and id !=".$capitan_id;
+        $db->execute($q);
+
 
     }
 
@@ -253,7 +274,7 @@ class convocatoria {
     public function getConvocados($id=0) {
 
         $db = DBConnection::getDataAccess();
-        $q = "select j.nombre,cj.mensaje,j.id,cj.equipo,j.score,cj.capitan from jugadores j
+        $q = "select j.nombre,cj.mensaje,j.id,cj.equipo,j.score,cj.capitan,j.capitan_flag from jugadores j
                 inner join convocatoria_jugadores cj on j.id = cj.id_jugador
                 where cj.id_convocatoria=".($id>0 ? $id : $this->id)." order by cj.ts";
         $r = $db->executeAndFetch($q);

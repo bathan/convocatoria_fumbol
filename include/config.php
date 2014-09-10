@@ -14,6 +14,7 @@ $defaultValues = array(
   //  '_SELECCION_EMAIL'=>'hanskait@gmail.com',
     '_SELECCION_EMAIL'=>'seleccion@fumbol.com.ar',
 	'_DIAS_CONVOCATORIA' => '2', /* el dia 1 es lunes, martes 2 blablabla*/
+    '_MAX_FECHAS_CAPITANES' => '4', // La cantidad de fechas que un capitan no puede volver a repetirse
 );
 
 

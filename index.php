@@ -54,6 +54,7 @@ if($_POST){
 $redBackground = ($c->getStatus() == convocatoria::STATUS_HAY_FUMBOL_CERRADA_CONVOCATORIA) || ($c->getStatus() == convocatoria::STATUS_CERRADA);
 
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>
